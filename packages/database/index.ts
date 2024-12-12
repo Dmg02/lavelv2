@@ -1,16 +1,25 @@
 import 'server-only';
-
-import { Pool, neonConfig } from '@neondatabase/serverless';
-import { PrismaNeon } from '@prisma/adapter-neon';
-import { PrismaClient } from '@prisma/client';
 import { env } from '@repo/env';
-import ws from 'ws';
+import { createClient } from '@supabase/supabase-js';
+import { drizzle } from 'drizzle-orm/postgres-js';
+import postgres from 'postgres';
 
-neonConfig.webSocketConstructor = ws;
+if (!env.DATABASE_URL) {
+  throw new Error('DATABASE_URL is not defined');
+}
 
-const pool = new Pool({ connectionString: env.DATABASE_URL });
-const adapter = new PrismaNeon(pool);
+if (!env.SUPABASE_URL || !env.SUPABASE_KEY) {
+  throw new Error('Supabase credentials are not defined');
+}
 
-export const database = new PrismaClient({ adapter });
+// Create Postgres client with prepare disabled for Supabase pooling
+const client = postgres(env.DATABASE_URL);
 
-export * from '@prisma/client';
+// Create Supabase client (if needed for auth/storage)
+export const supabase = createClient(env.SUPABASE_URL, env.SUPABASE_KEY);
+
+// Initialize Drizzle with schema
+export const db = drizzle({ client });
+
+// Export all schema definitions
+export * from './src/schema';

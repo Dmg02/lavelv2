@@ -1,0 +1,18 @@
+{
+  "home": "Home",
+  "product": "Product",
+  "productDescription": "Everything you need to build your SaaS",
+  "blog": "Blog",
+  "docs": "Documentation",
+  "pricing": "Pricing",
+  "contactUs": "Contact us",
+  "signIn": "Sign in",
+  "getStarted": "Join waitlist",
+  "bookCall": "Book a call today",
+  "logoAlt": "Lavel Logo",
+  "companyName": "Lavel",
+  "cta": {
+    "signup": "Sign up",
+    "contact": "Contact us"
+  }
+}

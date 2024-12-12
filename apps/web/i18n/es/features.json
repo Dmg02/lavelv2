@@ -1,0 +1,16 @@
+{
+  "features": {
+    "title": "Nuestras Características",
+    "description": "Descubre lo que ofrecemos",
+    "list": {
+      "feature1": {
+        "title": "Característica 1",
+        "description": "Descripción de la característica 1"
+      },
+      "feature2": {
+        "title": "Característica 2",
+        "description": "Descripción de la característica 2"
+      }
+    }
+  }
+}

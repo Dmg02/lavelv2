@@ -1,5 +1,4 @@
 'use client';
-
 import { ModeToggle } from '@repo/design-system/components/mode-toggle';
 import { Button } from '@repo/design-system/components/ui/button';
 import {
@@ -10,45 +9,35 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from '@repo/design-system/components/ui/navigation-menu';
+import { LanguageSwitcher } from './language-switcher';
+
 import { env } from '@repo/env';
 import { Menu, MoveRight, X } from 'lucide-react';
 import Link from 'next/link';
 import { useState } from 'react';
 
-import Image from 'next/image';
-import Logo from './logo.svg';
+import { useTranslations } from '@/utils/translations';
 
 export const Header = () => {
+  const { t } = useTranslations('header');
   const navigationItems = [
     {
-      title: 'Home',
+      title: t('home'),
       href: '/',
       description: '',
     },
     {
-      title: 'Product',
-      description: 'Managing a small business today is already tough.',
+      title: t('product'),
+      description: t('productDescription'),
       items: [
         {
-          title: 'Pricing',
-          href: '/pricing',
-        },
-        {
-          title: 'Pricing',
-          href: '/pricing',
-        },
-        {
-          title: 'Pricing',
-          href: '/pricing',
-        },
-        {
-          title: 'Pricing',
+          title: t('pricing'),
           href: '/pricing',
         },
       ],
     },
     {
-      title: 'Blog',
+      title: t('blog'),
       href: '/blog',
       description: '',
     },
@@ -56,7 +45,7 @@ export const Header = () => {
 
   if (env.NEXT_PUBLIC_DOCS_URL) {
     navigationItems.push({
-      title: 'Docs',
+      title: t('docs'),
       href: env.NEXT_PUBLIC_DOCS_URL,
       description: '',
     });
@@ -74,7 +63,11 @@ export const Header = () => {
                   {item.href ? (
                     <>
                       <NavigationMenuLink asChild>
-                        <Button variant="ghost" asChild>
+                        <Button
+                          variant="ghost"
+                          asChild
+                          className="whitespace-nowrap"
+                        >
                           <Link href={item.href}>{item.title}</Link>
                         </Button>
                       </NavigationMenuLink>
@@ -119,28 +112,29 @@ export const Header = () => {
           </NavigationMenu>
         </div>
         <div className="flex items-center gap-2 lg:justify-center">
-          <Image
-            src={Logo}
-            alt="Logo"
-            width={24}
-            height={24}
-            className="dark:invert"
-          />
-          <p className="whitespace-nowrap font-semibold">next-forge</p>
+          <h1 className="whitespace-nowrap font-semibold text-3xl">
+            {t('companyName')}
+          </h1>
         </div>
         <div className="flex w-full justify-end gap-4">
+          <LanguageSwitcher />
+          <div className="hidden border-r md:inline" />
           <Button variant="ghost" className="hidden md:inline" asChild>
-            <Link href="/contact">Contact us</Link>
+            <Link href="/contact">{t('contactUs')}</Link>
           </Button>
           <div className="hidden border-r md:inline" />
           <div className="hidden md:inline">
             <ModeToggle />
           </div>
           <Button variant="outline" asChild className="hidden md:inline">
-            <Link href={`${env.NEXT_PUBLIC_APP_URL}/sign-in`}>Sign in</Link>
+            <Link href={`${env.NEXT_PUBLIC_APP_URL}/sign-in`}>
+              {t('signIn')}
+            </Link>
           </Button>
           <Button asChild>
-            <Link href={`${env.NEXT_PUBLIC_APP_URL}/sign-up`}>Get started</Link>
+            <Link href={`${env.NEXT_PUBLIC_APP_URL}/sign-up`}>
+              {t('getStarted')}
+            </Link>
           </Button>
         </div>
         <div className="flex w-12 shrink items-end justify-end lg:hidden">
