@@ -2,158 +2,208 @@
 
 ## Directory Structure
 
+```
 apps/web/
 ├── i18n/
 │ ├── types/
-│ │ ├── index.d.ts # Main types definition
-│ │ ├── hero.d.ts # Hero section types
-│ │ └── features.d.ts # Features section types
-│ ├── en/
-│ │ ├── hero.json # English translations
-│ │ └── features.json
-│ ├── es/
-│ │ ├── hero.json # Spanish translations
-│ │ └── features.json
-│ └── i18n.config.ts # i18n configuration
+│ │ ├── shared/                # Shared, reusable types
+│ │ │ ├── common.d.ts         # Base shared types (status, dates, etc.)
+│ │ │ ├── entities.d.ts       # Core entity types (person, organization)
+│ │ │ ├── ui.d.ts            # UI component types
+│ │ │ └── forms.d.ts         # Form-related types
+│ │ └── features/            # Feature-specific types
+│ │   ├── records.d.ts       # Extends and uses shared types
+│ │   └── team.d.ts          # Extends and uses shared types
+│ ├── shared/                # Shared translations
+│ │ ├── en/
+│ │ │ ├── common.json        # Base translations
+│ │ │ ├── entities.json      # Entity translations
+│ │ │ ├── ui.json           # UI translations
+│ │ │ └── forms.json        # Form translations
+│ │ └── es/
+│ │   └── [same structure as en]
+│ └── i18n.config.ts
+```
 
+## Core Principles
 
-## Adding New Translations
+1. **Separation of Concerns**
+   - Base types and translations (common.d.ts)
+   - Entity-related types and translations (entities.d.ts)
+   - UI-specific types and translations (ui.d.ts)
+   - Feature-specific types and translations (in features/)
 
-1. **Define Types First**
-   - Create or update type definitions in `i18n/types/`
-   - Add new namespace to `types/index.d.ts`:
+2. **Type Hierarchy**
    ```typescript
-   export interface Translations {
-     hero: HeroTranslations;
-     features: FeaturesTranslations;
-     // Add your new namespace here
+   // Base types (common.d.ts)
+   export type StatusKey = 'active' | 'inactive' | 'pending';
+   export type RiskLevelKey = 'high' | 'medium' | 'low';
+   
+   // Entity types (entities.d.ts)
+   export interface PersonBase {
+     id: string;
+     name: string;
+     email: string;
+   }
+   
+   // Feature types (features/records.d.ts)
+   import { StatusKey, PersonBase } from '../shared';
+   
+   export interface Case {
+     status: StatusKey;      // Reuse base type
+     client: PersonBase;     // Reuse entity type
+     // Feature-specific fields...
    }
    ```
 
-2. **Create Translation Files**
-   - Add JSON files for each language:
+3. **Translation Organization**
    ```json
-   // i18n/en/your-namespace.json
+   // common.json
    {
-     "key": "English value",
-     "nested": {
-       "key": "Nested value"
+     "status": {
+       "active": "Active",
+       "inactive": "Inactive"
      }
    }
-   ```
-
-3. **Type Definition Example**
-   ```typescript
-   // i18n/types/your-namespace.d.ts
-   export interface YourNamespaceTranslations {
-     key: string;
-     nested: {
-       key: string;
-     };
+   
+   // entities.json
+   {
+     "person": {
+       "name": "Name",
+       "email": "Email"
+     }
    }
-   ```
-
-## Using Translations in Components
-
-1. **Basic Usage**
-   ```typescript
-   import { useTranslations } from '@/utils/translations';
-
-   export function YourComponent() {
-     const { t } = useTranslations('your-namespace');
-     return <h1>{t('key')}</h1>;
-   }
-   ```
-
-2. **With Provider**
-   ```typescript
-   import { TranslationsProvider } from '@/utils/translations';
-
-   export function Layout({ children, messages, locale }) {
-     return (
-       <TranslationsProvider messages={messages} locale={locale}>
-         {children}
-       </TranslationsProvider>
-     );
+   
+   // features/records.json
+   {
+     "case": {
+       "title": "Case Details"
+     }
    }
    ```
 
 ## Best Practices
 
-1. **Type Safety**
-   - Always define types for new translations
-   - Use TypeScript's type system to catch missing translations
-   - Keep type definitions in sync with JSON files
+1. **Type Reusability**
+   - Define base types in shared directories
+   - Extend base types for specific features
+   - Use composition over repetition
+   - Keep types DRY (Don't Repeat Yourself)
 
-2. **Naming Conventions**
-   - Use kebab-case for file names
-   - Use camelCase for translation keys
-   - Group related translations under nested objects
-
-3. **Translation Keys**
-   - Keep keys descriptive and consistent
-   - Use dot notation for nested keys
-   - Avoid using dynamic keys
-
-4. **Code Organization**
-   - One namespace per feature/section
-   - Keep translation files small and focused
-   - Group related translations together
-
-## Adding New Languages
-
-1. Add the new locale to `i18n.config.ts`:
+2. **Translation Keys**
+   - Use consistent naming patterns
+   - Group related translations logically
+   - Keep paths shallow when possible
    ```typescript
-   export const locales = ['en', 'es', 'fr'] as const;
+   // Good
+   status: Record<StatusKey, string>
+   
+   // Avoid deep nesting
+   deeply: {
+     nested: {
+       translations: string
+     }
+   }
    ```
 
-2. Create corresponding translation files:
-   ```
-   i18n/fr/
-   ├── hero.json
-   ├── features.json
-   └── ... (other namespaces)
-   ```
-
-## Type Safety Checks
-
-1. **Verify Translation Completeness**
-   - All languages should have the same keys
-   - Types should match actual JSON structure
-   - Use TypeScript to catch missing translations
-
-2. **Runtime Checks**
+3. **Component Usage**
    ```typescript
-   // Verify locale is supported
-   const locale = i18n.locales.includes(rawLocale as Locale)
-     ? rawLocale
-     : i18n.defaultLocale;
+   function MyComponent() {
+     // Import only needed translations
+     const commonT = useTranslations('common');
+     const recordsT = useTranslations('records');
+     
+     return (
+       <div>
+         <p>{commonT(`status.${status}`)}</p>
+         <p>{recordsT('case.title')}</p>
+       </div>
+     );
+   }
    ```
 
-## Common Gotchas
+4. **Data vs Translations**
+   - Data: Values that don't need translation
+     ```typescript
+     const person = {
+       id: "123",
+       name: "John Doe",     // Actual data
+       status: "active"      // Key for translation
+     }
+     ```
+   - Translations: UI text and data values that change by language
+     ```json
+     {
+       "status": {
+         "active": "Active",    // English
+         "active": "Activo"     // Spanish
+       }
+     }
+     ```
 
-1. **Type Imports**
-   - Use `type` import for type-only imports:
+5. **Adding New Features**
+   1. Identify reusable elements from shared types
+   2. Create feature-specific types extending shared ones
+   3. Add necessary translations following the structure
+   4. Use composition to build complex types
+
+6. **Performance Considerations**
+   - Import only needed translations
+   - Use code splitting for large translation files
+   - Consider lazy loading for rarely used translations
+
+## Examples
+
+1. **Creating a New Feature**
    ```typescript
-   import type { Translations } from '@/i18n/types';
+   // 1. Use shared types
+   import { StatusKey, PersonBase } from '../shared';
+   
+   // 2. Define feature-specific types
+   export interface MyFeature {
+     status: StatusKey;
+     owner: PersonBase;
+     // Feature-specific fields...
+   }
+   
+   // 3. Define feature translations
+   export interface MyFeatureTranslations {
+     labels: {
+       title: string;
+       description: string;
+     }
+   }
    ```
 
-2. **Provider Setup**
-   - Ensure TranslationsProvider wraps components using translations
-   - Pass correct locale and messages props
-
-3. **Next.js Integration**
-   - Use 'use client' directive when needed
-   - Handle server/client components appropriately
+2. **Using in Components**
+   ```typescript
+   function FeatureComponent() {
+     // Use translations from different namespaces
+     const commonT = useTranslations('common');
+     const featureT = useTranslations('myFeature');
+     
+     return (
+       <div>
+         <h1>{featureT('labels.title')}</h1>
+         <p>{commonT(`status.${data.status}`)}</p>
+       </div>
+     );
+   }
+   ```
 
 ## Maintenance
 
-1. **Regular Audits**
-   - Check for missing translations
-   - Verify type definitions match JSON
-   - Remove unused translations
+1. **Regular Review**
+   - Review shared types for reusability
+   - Check for duplicate translations
+   - Ensure consistent naming patterns
 
-2. **Updates**
-   - Keep next-intl package updated
-   - Test translations after updates
-   - Maintain documentation
+2. **Documentation**
+   - Keep type definitions documented
+   - Document translation structure
+   - Maintain examples for common patterns
+
+3. **Version Control**
+   - Track changes to translation files
+   - Review translation changes carefully
+   - Consider translation management tools

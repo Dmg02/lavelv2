@@ -1,0 +1,50 @@
+{
+  "records": {
+    "title": "Stay Organized, Win More Cases",
+    "subtitle": "Centralize All Your Case Records",
+    "description": "Managing multiple cases means juggling countless documents, emails, and notes. Important information gets scattered across different platforms, making it difficult to find what you need when you need it. This disorganization leads to wasted time, increased stress, and the risk of missing crucial details that could affect the outcome of a case or trial. Lavel Records brings all your information into one centralized, organized hub. From legal documents and correspondence to court dates and client notes, everything is neatly stored and easily accessible. Spend less time searching and more time strategizing. With all your records in one place, you'll work more efficiently, reduce errors, and provide better service to your clients.",
+    
+    "table": {
+      "columns": {
+        "favorite": "Favorite",
+        "caseNumber": "Case Number",
+        "status": "Status",
+        "stage": "Stage",
+        "lawBranch": "Law Branch",
+        "parties": "Parties",
+        "courthouse": "Courthouse",
+        "assignedTo": "Assigned To",
+        "lastUpdated": "Last Updated"
+      },
+      "ui": {
+        "search": {
+          "placeholder": "Search cases..."
+        },
+        "filters": {
+          "columns": "Columns"
+        }
+      }
+    },
+    
+    "mobile": {
+      "sections": {
+        "parties": "Parties",
+        "location": "Location",
+        "caseDetails": "Case Details",
+        "teamMembers": "Team Members"
+      },
+      "labels": {
+        "vs": "vs",
+        "plaintiff": "Plaintiff",
+        "defendant": "Defendant",
+        "courthouse": "Courthouse",
+        "city": "City"
+      }
+    }
+  }, 
+  "library": {
+    "title": "Every File at Your Fingertips",
+    "subtitle": "Centralize and Manage All Legal Materials Effortlessly",
+    "description": "You're inundated with files—documents, videos, audio recordings, and notes—all of which are crucial to your cases. These materials often end up scattered across emails, desktops, and various cloud services. Hunting down the right file wastes valuable time and increases the risk of missing critical information, which can compromise your case or trial preparation and performance. With Lavel Library, all your case/trial-related files are stored in one organized, secure location. Easily upload new documents, import media files, and create or edit notes directly within the feature. Exporting files for sharing or court submissions is just as seamless. By having instant access to all your materials, you can focus on what truly matters: building stronger cases and serving your clients effectively."
+    }
+}

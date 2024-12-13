@@ -1,0 +1,68 @@
+{
+  "labels": {
+    "status": {
+      "active": "Activo",
+      "inactive": "Inactivo"
+    },
+    "lawBranch": {
+      "labor": "Derecho Laboral",
+      "civil": "Derecho Civil",
+      "commercial": "Derecho Mercantil",
+      "criminal": "Derecho Penal",
+      "corporate": "Derecho Corporativo",
+      "family": "Derecho Familiar"
+    },
+    "riskFactor": {
+      "high": "Alto Riesgo",
+      "medium": "Riesgo Medio",
+      "low": "Bajo Riesgo"
+    },
+    "stage": {
+      "initial": "Fase Inicial",
+      "discovery": "Descubrimiento",
+      "trial": "Juicio",
+      "appeal": "Amparo",
+      "closed": "Cerrado"
+    },
+    "caseNumber": "No. Expediente",
+    "plaintiff": "Demandante",
+    "defendant": "Demandado",
+    "client": "Cliente",
+    "corporation": "Empresa",
+    "courthouse": "Autoridad Jurisdiccional",
+    "state": "Estado",
+    "city": "Ciudad",
+    "typeOfTrial": "Tipo de Asunto",
+    "relatedCase": "Asunto Relacionado",
+    "summary": "Resumen",
+    "contingencyCost": "Contingencia"
+  },
+  "table": {
+    "headers": {
+      "favorite": "Favorito",
+      "caseNumber": "No. Expediente",
+      "status": "Status",
+      "lawBranch": "Rama Legal",
+      "leadLawyer": "Abogado Encargado",
+      "teamMembers": "Miembros del Equipo",
+      "dateCreated": "Fecha de Alta"
+    },
+    "search": {
+      "placeholder": "Buscar registros...",
+      "filters": {
+        "title": "Filtros",
+        "clear": "Limpiar",
+        "apply": "Aplicar"
+      }
+    }
+  },
+  "mobile": {
+    "sections": {
+      "parties": "Partes",
+      "location": "Ubicación",
+      "caseDetails": "Detalles del Caso",
+      "riskAndFinancial": "Riesgo y Financiero",
+      "teamMembers": "Miembros del Equipo"
+    }
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "labels": {
+    "role": {
+      "partner": "Partner",
+      "associate": "Associate",
+      "paralegal": "Paralegal"
+    },
+    "availability": {
+      "available": "Available",
+      "inCourt": "In Court",
+      "onLeave": "On Leave"
+    },
+    "specialization": {
+      "corporateLaw": "Corporate Law",
+      "criminalLaw": "Criminal Law",
+      "familyLaw": "Family Law",
+      "intellectualProperty": "Intellectual Property",
+      "realEstate": "Real Estate",
+      "taxLaw": "Tax Law"
+    },
+    "location": {
+      "mexicoCity": "Mexico City",
+      "monterrey": "Monterrey",
+      "cancun": "Cancún"
+    },
+    "sectionTitle": "Our Team",
+    "contactButton": "Contact Lawyer",
+    "viewProfile": "View Profile"
+  }
+}

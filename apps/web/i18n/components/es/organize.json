@@ -1,0 +1,50 @@
+{
+  "records": {
+    "title": "Mantente Organizado, Gana Más Casos",
+    "subtitle": "Centraliza Todos tus Asuntos",
+    "description": "Lavel centraliza toda tu información en un solo lugar y organizado. Desde documentos legales y correspondencia hasta fechas de corte y notas de clientes, todo está almacenado ordenadamente y fácilmente accesible. Pasa menos tiempo buscando lo que necesitas. Con todos tus registros en un solo lugar, trabajarás más eficientemente, reducirás errores y brindarás un mejor servicio a tus clientes.",
+    
+    "table": {
+      "columns": {
+        "favorite": "Favorito",
+        "caseNumber": "No. Expediente",
+        "status": "Status",
+        "stage": "Etapa",
+        "lawBranch": "Rama Legal",
+        "parties": "Partes",
+        "courthouse": "Juzgado",
+        "assignedTo": "Asignado a",
+        "lastUpdated": "Última Actualización"
+      },
+      "ui": {
+        "search": {
+          "placeholder": "Buscar casos..."
+        },
+        "filters": {
+          "columns": "Columnas"
+        }
+      }
+    },
+    
+    "mobile": {
+      "sections": {
+        "parties": "Partes",
+        "location": "Ubicación",
+        "caseDetails": "Detalles del Caso",
+        "teamMembers": "Miembros del Equipo"
+      },
+      "labels": {
+        "vs": "contra",
+        "plaintiff": "Demandante",
+        "defendant": "Demandado",
+        "courthouse": "Autoridad",
+        "city": "Ciudad"
+      }
+    }
+  },
+  "library": {
+    "title": "Todos tus Archivos al Alcance de tu Mano",
+    "subtitle": "Centraliza y Gestiona Todos los Documentos Legales sin Esfuerzo",
+    "description": "Estás inundado de archivos: documentos, videos, grabaciones de audio y notas, todos cruciales para tus casos. Estos archivos a menudo terminan dispersos entre correos electrónicos, escritorios y varios servicios en la nube. Buscar el archivo correcto desperdicia tiempo valioso y aumenta el riesgo de perder información crítica, lo que puede comprometer la preparación y el rendimiento de tu caso o juicio. Con Lavel Library, todos tus archivos relacionados con casos/juicios se almacenan en una ubicación organizada y segura. Carga fácilmente nuevos documentos, importa archivos multimedia y crea o edita notas directamente dentro de la aplicación. Exportar archivos para compartir o presentar en la corte es igual de sencillo. Al tener acceso instantáneo a todos tus archivos, puedes concentrarse en lo que realmente importa: construir casos más sólidos y servir a tus clientes de manera efectiva."
+  }
+}

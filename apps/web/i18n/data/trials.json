@@ -1,0 +1,26 @@
+{
+  "cases": [
+    {
+      "id": "1",
+      "caseNumber": "2024-001",
+      "status": "active",
+      "lawBranch": "corporateLaw",
+      "stage": "trial",
+      "riskFactor": "medium",
+      "plaintiff": "Maria González",
+      "defendant": "Tech Solutions SA de CV",
+      "client": "Maria González",
+      "corporation": "Tech Solutions SA de CV",
+      "summary": "Employment contract dispute regarding termination terms",
+      "totalHours": 45,
+      "leadLawyerId": "L001",
+      "assignedLawyerIds": ["L001", "L002"],
+      "courthouse": "Tribunal Superior de Justicia CDMX",
+      "state": "cdmx",
+      "city": "mexicoCity",
+      "contingencyCost": 150000,
+      "dateCreated": "2024-01-15",
+      "favorite": true
+    }
+  ]
+}

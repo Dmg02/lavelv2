@@ -28,14 +28,14 @@ export const i18n = {
 export default getRequestConfig(async ({ locale }) => {
   const messages = {
     en: {
-      hero: (await import('./i18n/en/hero.json')).default,
-      features: (await import('./i18n/en/features.json')).default,
-      header: (await import('./i18n/en/header.json')).default,
+      hero: (await import('./i18n/components/en/hero.json')).default,
+      header: (await import('./i18n/components/en/header.json')).default,
+      organize: (await import('./i18n/components/en/organize.json')).default,
     },
     es: {
-      hero: (await import('./i18n/es/hero.json')).default,
-      features: (await import('./i18n/es/features.json')).default,
-      header: (await import('./i18n/es/header.json')).default,
+      hero: (await import('./i18n/components/es/hero.json')).default,
+      header: (await import('./i18n/components/es/header.json')).default,
+      organize: (await import('./i18n/components/es/organize.json')).default,
     },
   } as Record<string, Record<string, AbstractIntlMessages>>;
 

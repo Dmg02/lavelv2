@@ -1,0 +1,67 @@
+{
+  "labels": {
+    "status": {
+      "active": "Active",
+      "inactive": "Inactive"
+    },
+    "lawBranch": {
+      "labor": "Labor Law",
+      "civil": "Civil Law",
+      "commercial": "Commercial Law",
+      "criminal": "Criminal Law",
+      "corporate": "Corporate Law",
+      "family": "Family Law"
+    },
+    "riskFactor": {
+      "high": "High Risk",
+      "medium": "Medium Risk",
+      "low": "Low Risk"
+    },
+    "stage": {
+      "initial": "Initial Phase",
+      "discovery": "Discovery",
+      "trial": "Trial",
+      "appeal": "Appeal",
+      "closed": "Closed"
+    },
+    "caseNumber": "Case Number",
+    "plaintiff": "Plaintiff",
+    "defendant": "Defendant",
+    "client": "Client",
+    "corporation": "Corporation",
+    "courthouse": "Courthouse",
+    "state": "State",
+    "city": "City",
+    "typeOfTrial": "Type of Trial",
+    "relatedCase": "Related Case",
+    "summary": "Summary",
+    "contingencyCost": "Contingency Cost"
+  },
+  "table": {
+    "headers": {
+      "favorite": "Favorite",
+      "caseNumber": "Case Number",
+      "status": "Status",
+      "lawBranch": "Law Branch",
+      "leadLawyer": "Lead Lawyer",
+      "dateCreated": "Date Created"
+    },
+    "search": {
+      "placeholder": "Search records...",
+      "filters": {
+        "title": "Filters",
+        "clear": "Clear",
+        "apply": "Apply"
+      }
+    }
+  },
+  "mobile": {
+    "sections": {
+      "parties": "Parties",
+      "location": "Location",
+      "caseDetails": "Case Details",
+      "riskAndFinancial": "Risk & Financial",
+      "teamMembers": "Team Members"
+    }
+  }
+}

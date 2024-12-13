@@ -1,0 +1,30 @@
+{
+  "labels": {
+    "role": {
+      "partner": "Socio",
+      "associate": "Asociado",
+      "paralegal": "Pasante"
+    },
+    "availability": {
+      "available": "Disponible",
+      "inCourt": "En Corte",
+      "onLeave": "Ausente"
+    },
+    "specialization": {
+      "corporateLaw": "Derecho Corporativo",
+      "criminalLaw": "Derecho Penal",
+      "familyLaw": "Derecho Familiar",
+      "intellectualProperty": "Propiedad Intelectual",
+      "realEstate": "Bienes Raíces",
+      "taxLaw": "Derecho Fiscal"
+    },
+    "location": {
+      "mexicoCity": "Ciudad de México",
+      "monterrey": "Monterrey",
+      "cancun": "Cancún"
+    },
+    "sectionTitle": "Nuestro Equipo",
+    "contactButton": "Contactar Abogado",
+    "viewProfile": "Ver Perfil"
+  }
+}

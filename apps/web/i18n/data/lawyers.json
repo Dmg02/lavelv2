@@ -1,0 +1,37 @@
+{
+  "lawyers": [
+    {
+      "id": "L001",
+      "name": "Juan Javier de Los Monteros Silva",
+      "role": "partner",
+      "avatar": "/avatars/juan.jpg",
+      "email": "juan.delosmonteros@abogados.com",
+      "phoneNumber": "+52 55 7809 5555",
+      "specialization": "laborLaw",
+      "officeLocation": "mexicoCity",
+      "availability": "available"
+    },
+    {
+      "id": "L002",
+      "name": "Ana Herrera Maqueo",
+      "role": "associate",
+      "avatar": "/avatars/ana.jpg",
+      "email": "ana.herrera@abogados.com",
+      "phoneNumber": "+52 55 7809 5556",
+      "specialization": "criminalLaw",
+      "officeLocation": "mexicoCity",
+      "availability": "inCourt"
+    },
+    {
+      "id": "L003",
+      "name": "Carlos Rodríguez López",
+      "role": "paralegal",
+      "avatar": "/avatars/carlos.jpg",
+      "email": "carlos.rodriguez@abogados.com",
+      "phoneNumber": "+52 55 7809 5557",
+      "specialization": "familyLaw",
+      "officeLocation": "monterrey",
+      "availability": "available"
+    }
+  ]
+}
