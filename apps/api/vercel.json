@@ -4,7 +4,5 @@
       "path": "/cron/keep-alive",
       "schedule": "*/10 * * * *"
     }
-  ], 
-  "buildCommand": "turbo run build --filter=api",
-  "outputDirectory": "apps/api/.next"
+  ]
 }
