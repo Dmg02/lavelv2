@@ -7,7 +7,7 @@ import { Badge } from "@repo/design-system/components/ui/badge";
 import { Star, StarOff } from 'lucide-react';
 import { Button } from "@repo/design-system/components/ui/button";
 import { cn } from "@repo/design-system/lib/utils";
-import type { ColumnVisibility } from '../types';
+import type { ColumnKey, ColumnVisibility } from '../types/columns';
 import type { Case } from '@/types/shared/case';
 import { CaseStatus } from '@/types/shared/case';
 
@@ -16,12 +16,10 @@ interface TableViewProps {
   columnVisibility: ColumnVisibility;
 }
 
-type ColumnKey = keyof ColumnVisibility;
-
 export function TableView({ data, columnVisibility }: TableViewProps) {
-  const t = useTranslations('organize.records.table.columns');
+  const t = useTranslations('organize.records.table');
 
-  // Render cell based on column type
+  // Function to get cell content based on column type
   const renderCell = (item: Case, columnKey: ColumnKey) => {
     switch (columnKey) {
       case 'favorite':
@@ -42,12 +40,14 @@ export function TableView({ data, columnVisibility }: TableViewProps) {
             )}
           </Button>
         );
+
       case 'caseNumber':
         return (
           <span className="font-medium text-foreground">
             {item.caseNumber}
           </span>
         );
+
       case 'status':
         return (
           <Badge variant="outline" className={cn(
@@ -59,33 +59,112 @@ export function TableView({ data, columnVisibility }: TableViewProps) {
             {item.status}
           </Badge>
         );
+
       case 'stage':
-        return item.stage;
+        return (
+          <span className="text-sm">
+            {item.stage}
+          </span>
+        );
+
       case 'lawBranch':
         return (
           <Badge variant="secondary" className="font-normal">
             {item.lawBranch}
           </Badge>
         );
-      case 'parties':
+
+      case 'client':
         return (
-          <div>
-            <div className="font-medium">{item.plaintiff}</div>
-            <div className="text-muted-foreground text-sm">vs.</div>
-            <div className="font-medium">{item.defendant}</div>
-          </div>
+          <span className="text-sm">
+            {item.client}
+          </span>
         );
+
+      case 'leadLawyer':
+        return (
+          <span className="text-sm">
+            {item.leadLawyerId}
+          </span>
+        );
+
+      case 'dateCreated':
+        return (
+          <span className="text-sm text-muted-foreground">
+            {new Date(item.dateCreated).toLocaleDateString()}
+          </span>
+        );
+
+      case 'corporation':
+        return (
+          <span className="text-sm text-muted-foreground">
+            {item.corporation}
+          </span>
+        );
+
+      case 'plaintiff':
+        return (
+          <span className="text-sm">
+            {item.plaintiff}
+          </span>
+        );
+
+      case 'defendant':
+        return (
+          <span className="text-sm">
+            {item.defendant}
+          </span>
+        );
+
       case 'courthouse':
-        return item.courthouse;
-      case 'assignedTo':
         return (
-          <div className="flex -space-x-2">
-            {item.assignedLawyerIds.length} assigned
-          </div>
+          <span className="text-sm">
+            {item.courthouse}
+          </span>
         );
+
+      case 'assignedLawyers':
+        return (
+          <span className="text-sm">
+            {item.assignedLawyerIds.length} assigned
+          </span>
+        );
+
+      case 'riskFactor':
+        return item.riskFactor ? (
+          <Badge variant="outline" className={cn(
+            "font-medium px-2.5 py-0.5",
+            item.riskFactor.toLowerCase() === 'high' ? 'bg-destructive/10 text-destructive' :
+            item.riskFactor.toLowerCase() === 'medium' ? 'bg-warning/10 text-warning' :
+            'bg-success/10 text-success'
+          )}>
+            {item.riskFactor}
+          </Badge>
+        ) : 'N/A';
+
+      case 'contingencyCost':
+        return item.contingencyCost ? (
+          <span className="text-sm">
+            ${item.contingencyCost.toLocaleString()}
+          </span>
+        ) : 'N/A';
+
+      case 'typeOfTrial':
+        return (
+          <span className="text-sm">
+            {item.typeOfTrial || 'N/A'}
+          </span>
+        );
+
+      case 'totalHours':
+        return (
+          <span className="text-sm font-medium">
+            {item.totalHours} hrs
+          </span>
+        );
+
       default:
-        const key = columnKey as keyof Case;
-        return item[key]?.toString() || 'N/A';
+        return 'N/A';
     }
   };
 
@@ -105,7 +184,7 @@ export function TableView({ data, columnVisibility }: TableViewProps) {
                   "group transition-colors hover:text-foreground"
                 )}
               >
-                {t(key)}
+                {t(`columns.${key}`)}
               </TableHead>
             )
           )}

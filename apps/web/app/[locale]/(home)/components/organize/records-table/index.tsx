@@ -31,6 +31,7 @@ export function RecordsTable({ data, lawyers }: RecordsTableProps) {
       record.defendant.toLowerCase().includes(searchLower) ||
       record.courthouse.toLowerCase().includes(searchLower) ||
       lawyers[record.leadLawyerId]?.name.toLowerCase().includes(searchLower)
+      
     );
   });
 

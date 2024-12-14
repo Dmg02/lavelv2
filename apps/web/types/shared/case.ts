@@ -15,9 +15,15 @@ export const CaseStage = {
   SETTLEMENT: 'Acuerdo'
 } as const;
 
+export const RiskFactor = {
+  LOW: 'Bajo',
+  MEDIUM: 'Medio',
+  HIGH: 'Alto',
+} as const;
 
 export type CaseStatus = typeof CaseStatus[keyof typeof CaseStatus];
 export type CaseStage = typeof CaseStage[keyof typeof CaseStage];
+export type RiskFactor = typeof RiskFactor[keyof typeof RiskFactor];
 
 export interface Case {
   // Identifiers

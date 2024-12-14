@@ -3,11 +3,11 @@ import { Courthouses } from '@/types/shared/courthouses';
 import { Cities } from '@/types/shared/location';
 import { LawBranch } from '@/types/shared/law-branch';
 import { States } from '@/types/shared/location';
-
+import { RiskFactor } from '@/types/shared/case';
 export const cases: Case[] = [
   {
     id: 'C001',
-    caseNumber: '2024/001',
+    caseNumber: '198/2024',
     status: CaseStatus.ACTIVE,
     stage: CaseStage.DISCOVERY,
     lawBranch: LawBranch.CIVIL,
@@ -24,11 +24,14 @@ export const cases: Case[] = [
     client: 'Cliente 1',
     corporation: 'Corporación 1',
     totalHours: 100,
-    summary: 'Resumen de la demanda'
+    summary: 'Resumen de la demanda',
+    riskFactor: RiskFactor.HIGH,
+    contingencyCost: 10000,
+    typeOfTrial: 'Juicio',
   },
   {
     id: 'C002',
-    caseNumber: '2024/002',
+    caseNumber: '27/12/2024',
     status: CaseStatus.ACTIVE,
     stage: CaseStage.TRIAL,
     lawBranch: LawBranch.CRIMINAL,
@@ -45,11 +48,14 @@ export const cases: Case[] = [
     client: 'Cliente 2',
     corporation: 'Corporación 2',
     totalHours: 150,
-    summary: 'Resumen del juicio'
+    summary: 'Resumen del juicio',
+    riskFactor: RiskFactor.HIGH,
+    contingencyCost: 10000,
+    typeOfTrial: 'Juicio',
   },
   {
     id: 'C003',
-    caseNumber: '2024/003',
+    caseNumber: '321/2012',
     status: CaseStatus.INACTIVE,
     stage: CaseStage.SETTLEMENT,
     lawBranch: LawBranch.FAMILY,
@@ -66,11 +72,14 @@ export const cases: Case[] = [
     client: 'Cliente 3',
     corporation: 'Corporación 3',
     totalHours: 200,
-    summary: 'Resumen del acuerdo'
+    summary: 'Resumen del acuerdo',
+    riskFactor: RiskFactor.HIGH,
+    contingencyCost: 10000,
+    typeOfTrial: 'Juicio',
   },
   {
     id: 'C004',
-    caseNumber: '2024/004',
+    caseNumber: '123/2024',
     status: CaseStatus.ACTIVE,
     stage: CaseStage.INITIAL,
     lawBranch: LawBranch.CORPORATE,
@@ -87,11 +96,14 @@ export const cases: Case[] = [
     client: 'Cliente 4',
     corporation: 'Corporación 4',
     totalHours: 250,
-    summary: 'Resumen del amparo'
+    summary: 'Resumen del amparo',
+    riskFactor: RiskFactor.HIGH,
+    contingencyCost: 10000,
+    typeOfTrial: 'Juicio',
   },
   {
     id: 'C005',
-    caseNumber: '2024/005',
+    caseNumber: '988/2018',
     status: CaseStatus.ACTIVE,
     stage: CaseStage.APPEAL,
     lawBranch: LawBranch.ADMINISTRATIVE,
@@ -108,6 +120,9 @@ export const cases: Case[] = [
     client: 'Cliente 5',
     corporation: 'Corporación 5',
     totalHours: 300,
-    summary: 'Resumen del recurso'
+    summary: 'Resumen del recurso',
+    riskFactor: RiskFactor.HIGH,
+    contingencyCost: 10000,
+    typeOfTrial: 'Juicio',
   }
 ]; 

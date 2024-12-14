@@ -14,7 +14,18 @@
         "parties": "Partes",
         "courthouse": "Juzgado",
         "assignedTo": "Asignado a",
-        "lastUpdated": "Última Actualización"
+        "lastUpdated": "Última Actualización",
+        "riskFactor": "Factor de Riesgo",
+        "contingencyCost": "Contingencia",
+        "typeOfTrial": "Tipo de Juicio",
+        "totalHours": "Total de Horas",
+        "assignedLawyers": "Abogados Asignados",
+        "client": "Cliente",
+        "leadLawyer": "Abogado Principal",
+        "dateCreated": "Fecha de Creación",
+        "corporation": "Corporación",
+        "plaintiff": "Demandante",
+        "defendant": "Demandado"
       },
       "ui": {
         "search": {
