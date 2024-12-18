@@ -9,6 +9,7 @@ import { Hero } from './components/hero';
 import { Stats } from './components/stats';
 import { Testimonials } from './components/testimonials';
 import { OrganizeSection } from './components/organize/organize-section';
+import { CollaborateSection } from './components/collaborate/collaborate-section';
 
 const meta = {
   title: 'From zero to production in minutes.',
@@ -30,6 +31,7 @@ const Home = async () => {
       )}
       <Hero />
       <OrganizeSection />
+      <CollaborateSection />
       <Cases />
       <Features />
       <Stats />

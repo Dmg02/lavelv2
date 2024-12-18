@@ -177,11 +177,11 @@ export function TableView({ data, columnVisibility }: TableViewProps) {
               <TableHead 
                 key={key}
                 className={cn(
-                  "bg-muted/5 dark:bg-muted/10 h-14",
+                  "bg-[hsl(var(--subtle-bg))] dark:bg-muted h-14",
                   "text-sm font-semibold tracking-tight",
                   "text-muted-foreground/80",
                   "px-4 first:pl-6 last:pr-6",
-                  "group transition-colors hover:text-foreground"
+                  "hover-gradient-bar"
                 )}
               >
                 {t(`columns.${key}`)}
@@ -196,7 +196,7 @@ export function TableView({ data, columnVisibility }: TableViewProps) {
             key={item.id} 
             className={cn(
               "group/row",
-              "hover:bg-muted/50 dark:hover:bg-muted/10",
+              "hover:bg-[hsl(var(--hover-bg))] dark:hover:bg-muted/10",
               "transition-colors duration-200"
             )}
           >

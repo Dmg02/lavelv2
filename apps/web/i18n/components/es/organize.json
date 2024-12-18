@@ -25,7 +25,9 @@
         "dateCreated": "Fecha de Creación",
         "corporation": "Corporación",
         "plaintiff": "Demandante",
-        "defendant": "Demandado"
+        "defendant": "Demandado",
+        "city": "Ciudad",
+        "state": "Estado"
       },
       "ui": {
         "search": {
@@ -41,15 +43,18 @@
       "sections": {
         "parties": "Partes",
         "location": "Ubicación",
-        "caseDetails": "Detalles del Caso",
-        "teamMembers": "Miembros del Equipo"
+        "caseDetails": "Detalles del Asunto",
+        "teamMembers": "Miembros del Equipo", 
+        "caseInfo": "Información del Caso",
+        "riskAndFinancial": "Riesgo "
       },
       "labels": {
-        "vs": "contra",
+        "vs": "vs",
         "plaintiff": "Demandante",
         "defendant": "Demandado",
         "courthouse": "Autoridad",
-        "city": "Ciudad"
+        "city": "Ciudad",
+        "state": "Estado"
       }
     }
   },

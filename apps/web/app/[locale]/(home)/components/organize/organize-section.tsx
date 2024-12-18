@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import { cn } from "@repo/design-system/lib/utils";
 import { useTranslations } from '@/utils/translations';
 import { RecordsTable } from './records-table';
-// import { LibraryExplorer } from './library/library-explorer';
+import { LibraryExplorer } from './library/library-explorer';
 // import CaseTimeline from './timeline/case-timeline';
 import { DemoContainer } from '../shared/demo-container';
 import { cases } from '@/data/cases';
@@ -23,21 +23,18 @@ export function OrganizeSection() {
           viewport={{ once: true }}
           className="max-w-4xl mx-auto px-4 space-y-2"
         >
-          <h1 className="feature-title-diagonal text-4xl">
+          <h1 className="feature-title-reverse text-4xl">
             {t('records.title')}
           </h1>
-          <p className="feature-description">
-            {t('records.description')}
-          </p>
         </motion.div>
       </div>
 
       {/* Records Feature - Left text, Right demo */}
       <div className="relative pt-8 pb-12 lg:pb-24">
         <div className="max-w-[90rem] mx-auto px-4">
-          <div className="flex flex-col lg:grid lg:grid-cols-[0.8fr,1.2fr] gap-8 lg:gap-24 items-center lg:items-start">
+          <div className="flex flex-col lg:grid lg:grid-cols-[0.8fr,1.2fr] gap-8 lg:gap-24 items-center">
             {/* Text Content */}
-            <div className="relative z-10 space-y-4 order-1">
+            <div className="relative z-10 space-y-4 order-1 lg:self-center">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -74,11 +71,11 @@ export function OrganizeSection() {
         <div className="max-w-[90rem] mx-auto px-4">
           <div className="flex flex-col lg:grid lg:grid-cols-[1.2fr,0.8fr] gap-8 lg:gap-24 items-center lg:items-start">
             {/* Library Demo */}
-            {/* <div className="w-full order-2 lg:order-1">
+            <div className="w-full order-2 lg:order-1">
               <DemoContainer className="w-full min-h-[700px] lg:h-[800px]">
                 <LibraryExplorer />
               </DemoContainer>
-            </div> */}
+            </div>
 
             {/* Text Content */}
             <div className="relative z-10 space-y-6 lg:space-y-8 order-1 lg:order-2">

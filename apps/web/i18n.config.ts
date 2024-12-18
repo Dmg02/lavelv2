@@ -31,11 +31,15 @@ export default getRequestConfig(async ({ locale }) => {
       hero: (await import('./i18n/components/en/hero.json')).default,
       header: (await import('./i18n/components/en/header.json')).default,
       organize: (await import('./i18n/components/en/organize.json')).default,
+      collaborate: (await import('./i18n/components/en/collaborate.json')).default,
+      library: (await import('./i18n/components/en/library.json')).default,
     },
     es: {
       hero: (await import('./i18n/components/es/hero.json')).default,
       header: (await import('./i18n/components/es/header.json')).default,
       organize: (await import('./i18n/components/es/organize.json')).default,
+      collaborate: (await import('./i18n/components/es/collaborate.json')).default,
+      library: (await import('./i18n/components/es/library.json')).default,
     },
   } as Record<string, Record<string, AbstractIntlMessages>>;
 

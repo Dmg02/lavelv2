@@ -14,5 +14,5 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "types/**/*.d.ts"
-  ]
+, "../../packages/design-system/components/ui/status-badge.tsx"  ]
 }

@@ -25,7 +25,9 @@
         "dateCreated": "Date Created",
         "corporation": "Corporation",
         "plaintiff": "Plaintiff",
-        "defendant": "Defendant"
+        "defendant": "Defendant",
+        "city": "City",
+        "state": "State"
       },
       "ui": {
         "search": {
@@ -49,7 +51,9 @@
         "plaintiff": "Plaintiff",
         "defendant": "Defendant",
         "courthouse": "Courthouse",
-        "city": "City"
+        "city": "City",
+        "riskFactor": "Risk Factor",
+        "contingencyCost": "Contingency Cost"
       }
     }
   }, 

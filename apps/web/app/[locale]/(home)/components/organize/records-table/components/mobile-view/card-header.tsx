@@ -42,7 +42,7 @@ export function CardHeader({ data }: CardHeaderProps) {
       {/* Stage & Type */}
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-2">
-          <div className="h-1.5 w-1.5 rounded-full bg-primary/50" />
+          <div className="h-1.5 w-1.5 rounded-full bg-notion-blue" />
           <span className="text-sm text-muted-foreground">
             {data.stage}
           </span>
@@ -55,13 +55,13 @@ export function CardHeader({ data }: CardHeaderProps) {
       {/* Parties */}
       <div className="text-sm">
         <span className="font-medium">{data.plaintiff}</span>
-        <span className="text-muted-foreground mx-2">{t('records.labels.vs')}</span>
+        <span className="text-muted-foreground mx-2">{t('records.mobile.labels.vs')}</span>
         <span className="font-medium">{data.defendant}</span>
       </div>
 
       {/* Location */}
       <div className="flex items-center gap-2 text-sm text-muted-foreground">
-        <MapPin className="h-3.5 w-3.5" />
+        <MapPin className="h-3.5 w-3.5 text-notion-blue" />
         <span>{data.courthouse}</span>
       </div>
     </div>

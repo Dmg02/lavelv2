@@ -1,0 +1,27 @@
+{
+    "section": {
+        "title": "See the Big picture, Stay in Control with your Team",
+        "subtitle": "Unify past, present, and future tasks and events Timeline and Calendar.",
+        "description": "Lavel Timeline and Calendar provide a comprehensive solution to keep you organized and in control. Timeline offers a visual representation of past, present, and future events and tasks within each individual case or trial, allowing you to focus on the specifics of a single case. Calendar extends this visibility across all your cases, giving you an overarching view of your entire schedule. Easily filter and toggle between views to display only what's relevant to you at the moment. Whether you're zeroing in on a specific case or managing your overall workload, these tools help you stay ahead, reduce stress, and ensure you never miss a critical detail again."
+    },
+    "calendar": {
+        "title": "Calendar & Events",
+        "subtitle": "View your cases and tasks in a timeline.",
+        "description": "You're juggling numerous events across multiple cases—court hearings, client meetings, phone calls, and more. Keep track of everything in one place with automatic reminders and clear overview of what's ahead."
+    },
+    "timeline": {
+        "title": "Timeline ",
+        "subtitle": "View your cases and tasks in a timeline.",
+        "description": "View your cases and tasks in a timeline."
+    },
+    "tasks": {
+        "title": "Tasks",
+        "subtitle": "Take Control with Smart Task Management",
+        "description": "Action is everything. Lavel Tasks empowers you to turn intentions into accomplishments. Easily create tasks from event or client requests, assign due dates and set priorities to keep your workload organized."
+    },
+    "notifications": {
+        "title": "Mentions & Notifications",
+        "subtitle": "Stay in the Loop with Real-Time Updates",
+        "description": "Loop in colleagues effortlessly using @mentions to collaborate and ensure everyone is on the same page. With a clear visual of your tasks—what's pending, what's completed, and what's urgent—you'll never miss a deliverable again. Stay proactive, reduce bottlenecks, and keep your cases moving forward by transforming the way you manage tasks."
+    }
+}

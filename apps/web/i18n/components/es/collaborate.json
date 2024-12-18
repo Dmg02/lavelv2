@@ -1,0 +1,27 @@
+{
+    "section": {
+        "title": "Ten el panorama completo y mantén el control con tu equipo",
+        "subtitle": "Unifica tus tareas y eventos pasados, presentes y futuros en la Línea de Tiempo y Calendario.",
+        "description": "La Línea de Tiempo y el Calendario de Lavel te ofrecen una solución completa para mantenerte organizado y en control. La Línea de Tiempo te muestra de forma visual todos los eventos y tareas pasados, presentes y futuros de cada caso o juicio, permitiéndote concentrarte en los detalles específicos. El Calendario amplía esta visibilidad a todos tus casos, dándote una vista general de tu agenda completa. Filtra y cambia entre diferentes vistas fácilmente para mostrar solo lo que te interesa en el momento. Ya sea que te enfoques en un caso específico o administres toda tu carga de trabajo, estas herramientas te ayudan a mantenerte al día, reducir el estrés y no perder ningún detalle importante."
+    },
+    "calendar": {
+        "title": "Calendario y Eventos",
+        "subtitle": "Visualiza tus casos y tareas en una línea de tiempo.",
+        "description": "Sabemos que manejas múltiples eventos en diferentes casos: audiencias, reuniones con clientes, llamadas y más. Mantén todo organizado en un solo lugar con recordatorios automáticos y una vista clara de lo que viene."
+    },
+    "timeline": {
+        "title": "Línea de Tiempo",
+        "subtitle": "Visualiza tus casos y tareas en una línea de tiempo.",
+        "description": "Visualiza tus casos y tareas en una línea de tiempo."
+    },
+    "tasks": {
+        "title": "Tareas",
+        "subtitle": "Toma el control con una gestión inteligente de tareas",
+        "description": "La acción lo es todo. Las Tareas de Lavel te ayudan a convertir planes en logros. Crea tareas fácilmente a partir de eventos o solicitudes de clientes, asigna fechas límite y establece prioridades para mantener tu trabajo organizado."
+    },
+    "notifications": {
+        "title": "Menciones y Notificaciones",
+        "subtitle": "Mantente al tanto con actualizaciones en tiempo real",
+        "description": "Incluye a tus colegas fácilmente usando @menciones para colaborar y asegurar que todos estén en sintonía. Con una vista clara de tus tareas —lo pendiente, lo completado y lo urgente— nunca más se te pasará una entrega. Mantente proactivo, reduce los cuellos de botella y haz que tus casos avancen transformando la manera en que gestionas las tareas."
+    }
+}   

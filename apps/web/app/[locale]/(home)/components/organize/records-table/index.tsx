@@ -36,7 +36,7 @@ export function RecordsTable({ data, lawyers }: RecordsTableProps) {
   });
 
   return (
-    <div className="bg-background dark:bg-card rounded-xl border">
+    <div className="surface-base rounded-xl border">
       <TableHeader 
         searchTerm={searchTerm}
         onSearchChange={setSearchTerm}

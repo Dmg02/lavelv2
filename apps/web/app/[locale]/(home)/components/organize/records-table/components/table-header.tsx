@@ -20,6 +20,7 @@ interface TableHeaderProps {
   onColumnVisibilityChange: (visibility: ColumnVisibility) => void;
 }
 
+
 export function TableHeader({
   searchTerm,
   onSearchChange,
@@ -29,7 +30,7 @@ export function TableHeader({
   const t = useTranslations('organize.records.table');
 
   return (
-    <div className="border-border/50 border-b bg-muted/20 p-6">
+    <div className="border-border/50 border-b bg-muted/20 p-6 ">
       <div className="flex gap-3">
         {/* Search Input */}
         <div className="relative flex-1">

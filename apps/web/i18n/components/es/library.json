@@ -1,0 +1,61 @@
+{
+  "ui": {
+    "search": {
+      "placeholder": "Search files...",
+      "noResults": "No files found"
+    },
+    "fileTypes": {
+      "pdf": "PDF Document",
+      "doc": "Word Document",
+      "video": "Video Recording",
+      "audio": "Audio Recording",
+      "image": "Image",
+      "transcript": "Transcript"
+    },
+    "status": {
+      "draft": "Draft",
+      "final": "Final",
+      "archived": "Archived",
+      "pending_review": "Pending Review"
+    },
+    "categories": {
+      "pleading": "Pleading",
+      "evidence": "Evidence",
+      "discovery": "Discovery",
+      "correspondence": "Correspondence",
+      "motion": "Motion",
+      "transcript": "Transcript",
+      "exhibit": "Exhibit",
+      "contract": "Contract",
+      "custom": "Other"
+    },
+    "actions": {
+      "upload": "Upload Files",
+      "download": "Download",
+      "share": "Share",
+      "delete": "Delete",
+      "rename": "Rename",
+      "move": "Move"
+    },
+    "filters": {
+      "title": "Filters",
+      "type": "File Type",
+      "status": "Status",
+      "category": "Category",
+      "date": "Date"
+    },
+    "sort": {
+      "title": "Sort By",
+      "name": "Name",
+      "date": "Date",
+      "size": "Size",
+      "type": "Type"
+    }
+  },
+  "messages": {
+    "loading": "Loading files...",
+    "error": "An error occurred while loading files",
+    "success": "Operation completed successfully",
+    "confirmDelete": "Are you sure you want to delete this file?"
+  }
+} 

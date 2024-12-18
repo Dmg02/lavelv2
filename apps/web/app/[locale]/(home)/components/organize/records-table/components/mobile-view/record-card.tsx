@@ -13,9 +13,11 @@ interface RecordCardProps {
 }
 
 export function RecordCard({ record, lawyers }: RecordCardProps) {
+  const t = useTranslations('organize.records');
+
   return (
     <Accordion type="single" collapsible>
-      <AccordionItem value="details" className="border rounded-lg bg-background/80 backdrop-blur-sm">
+      <AccordionItem value="details" className="rounded-lg border surface-base backdrop-blur-sm">
         <AccordionTrigger className="px-6 py-4 hover:no-underline [&[data-state=open]>div]:pb-0">
           <CardHeader data={record} />
         </AccordionTrigger>

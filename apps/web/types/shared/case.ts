@@ -12,7 +12,7 @@ export const CaseStage = {
   DISCOVERY: 'Demanda',
   TRIAL: 'Juicio',
   APPEAL: 'Amparo',
-  SETTLEMENT: 'Acuerdo'
+  SETTLEMENT: 'Convenio'
 } as const;
 
 export const RiskFactor = {
@@ -25,40 +25,29 @@ export type CaseStatus = typeof CaseStatus[keyof typeof CaseStatus];
 export type CaseStage = typeof CaseStage[keyof typeof CaseStage];
 export type RiskFactor = typeof RiskFactor[keyof typeof RiskFactor];
 
+export interface CaseDocument {
+  id: string;
+  title: string;
+  type: string;
+  size: string;
+  status: string;
+  filingDate?: string;
+  dueDate?: string;
+  lastModified: string;
+  version: string;
+  authorId: string;
+  tags?: string[];
+  preview?: {
+    text?: string;
+    imageUrl?: string;
+    videoUrl?: string;
+    audioUrl?: string;
+  };
+}
+
 export interface Case {
-  // Identifiers
   id: string;
   caseNumber: string;
-  relatedCase: string;
-  
-  // Status and Classification
-  status: CaseStatus;
-  stage: CaseStage;
-  lawBranch: LawBranch;
-  typeOfTrial?: string;
-  
-  // Parties
-  plaintiff: string;
-  defendant: string;
-  client: string;
-  corporation: string;
-  
-  // Location
-  courthouse: Courthouses;
-  city: Cities;
-  state: States;
-  
-  // Dates and Metrics
-  dateCreated: string;
-  totalHours: number;
-  
-  // Case Details
-  summary: string;
-  riskFactor?: string;
-  contingencyCost?: number;
-  
-  // Assignments and Preferences
-  favorite: boolean;
-  leadLawyerId: string;
+  documents: CaseDocument[];
   assignedLawyerIds: string[];
 }

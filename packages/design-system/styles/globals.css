@@ -4,40 +4,76 @@
 
 @layer base {
   :root {
+    /* Core color palette - Base colors that everything derives from */
+    --color-primary-base: 209 100% 47%;    /* Notion Blue */
+    --color-gray-50: 0 0% 98%;
+    --color-gray-100: 0 0% 96%;
+    --color-gray-200: 0 0% 93%;
+    --color-gray-300: 0 0% 89%;
+    --color-gray-400: 0 0% 79%;
+    --color-gray-500: 0 0% 69%;
+    --color-gray-600: 0 0% 59%;
+    --color-gray-700: 0 0% 49%;
+    --color-gray-800: 0 0% 39%;
+    --color-gray-900: 0 0% 20%;
+    --color-gray-950: 0 0% 10%;
+
+    /* Semantic tokens - Usage-based variables */
     --background: 0 0% 100%;
     --foreground: 0 0% 3.9%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 0 0% 3.9%;
+    /* Surface colors - Different elevation levels */
+    --surface-base: 0 0% 100%;             /* Base layer - Pure white */
+    --surface-elevated: 0 0% 98%;          /* Slightly elevated */
+    --surface-higher: var(--color-gray-100);    /* More elevated */
+    
+    /* Component-specific */
+    --component-bg: 0 0% 99%;              /* Slightly off-white for components */
+    --component-header: var(--surface-elevated);
+    --component-hover: var(--surface-higher);
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 3.9%;
+    /* Interactive states */
+    --state-hover: var(--color-gray-200);
+    --state-active: var(--color-gray-300);
+    --state-selected: var(--color-gray-200);
 
-    --primary: 0 0% 9%;
-    --primary-foreground: 0 0% 98%;
+    /* Functional colors */
+    --primary: var(--color-primary-base);
+    --primary-foreground: var(--color-gray-50);
+    
+    /* Status colors */
+    --success: 142 76% 36%;
+    --warning: 36 100% 50%;
+    --destructive: 0 84.2% 60.2%;
 
-    --secondary: 0 0% 96.1%;
-    --secondary-foreground: 0 0% 9%;
+    /* Keep existing variables but reference core palette */
+    --card: var(--surface-base);
+    --card-foreground: var(--foreground);
 
-    --muted: 0 0% 96.1%;
+    --popover: var(--surface-base);
+    --popover-foreground: var(--foreground);
+
+    --secondary: var(--surface-elevated);
+    --secondary-foreground: var(--color-gray-900);
+
+    --muted: var(--subtle-bg);
     --muted-foreground: 0 0% 45.1%;
 
-    --accent: 0 0% 96.1%;
-    --accent-foreground: 0 0% 9%;
+    --accent: 209 100% 96%;
+    --accent-foreground: 209 100% 27%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
+    --destructive-foreground: var(--color-gray-50);
 
-    --success: 142 76% 36%;
-    --success-foreground: 0 0% 98%;
+    --success-foreground: var(--color-gray-50);
 
-    --warning: 36 100% 50%;
-    --warning-foreground: 0 0% 98%;
+    --warning-foreground: var(--color-gray-50);
 
-    --border: 0 0% 89.8%;
-    --input: 0 0% 89.8%;
-    --ring: 0 0% 3.9%;
+    --border: var(--color-gray-300);
+    --input: var(--color-gray-300);
+    --ring: var(--color-gray-900);
     --radius: 0.5rem;
+
+    --notion-blue: var(--color-primary-base);
 
     --chart-1: 12 76% 61%;
     --chart-2: 173 58% 39%;
@@ -45,49 +81,89 @@
     --chart-4: 43 74% 66%;
     --chart-5: 27 87% 67%;
 
-    --sidebar-background: 0 0% 98%;
+    --sidebar-background: var(--color-gray-50);
     --sidebar-foreground: 240 5.3% 26.1%;
     --sidebar-primary: 240 5.9% 10%;
-    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-primary-foreground: var(--color-gray-50);
     --sidebar-accent: 240 4.8% 95.9%;
     --sidebar-accent-foreground: 240 5.9% 10%;
     --sidebar-border: 220 13% 91%;
     --sidebar-ring: 217.2 91.2% 59.8%;
+
+    --gradient-from: 190 76% 64%;
+    --gradient-via: 222 82% 66%; 
+    --gradient-to: 251 86% 65%;
+    --gradient-border: 222 82% 66%;
+    --gradient-text: 222 82% 66%;
+
+    /* Component-specific backgrounds */
+    --component-background: var(--component-bg);
+    --header-background: var(--component-header);
+    --table-background: var(--component-bg);
+    --table-header: var(--component-header);
+    --table-row-hover: var(--component-hover);
+
+    /* Border colors */
+    --border-light: var(--color-gray-300);
+    --border-dark: 0 0% 15%;  /* Subtle dark mode border */
+    --border-table: 0 0% 15%; /* Specific for table rows */
+
+    /* Hierarchical backgrounds */
+    --subtle-bg: 60 7% 97%;        /* Notion-like subtle background */
+    --hover-bg: 0 0% 97%;          /* Hover state */
+
+    /* Focus ring color */
+    --ring: var(--primary);
+    --ring-offset: 0 0% 100%;
   }
   .dark {
-    --background: 0 0% 3.9%;
-    --foreground: 0 0% 98%;
+    /* Dark mode overrides using the same semantic structure */
+    --background: 0 0% 8%;              /* Darker background */
+    --foreground: var(--color-gray-50);
 
-    --card: 0 0% 3.9%;
-    --card-foreground: 0 0% 98%;
+    /* Surface colors - Dark mode */
+    --surface-base: 0 0% 11%;          /* Slightly lighter than background */
+    --surface-elevated: 0 0% 13%;      /* More elevated */
+    --surface-higher: 0 0% 15%;        /* Highest elevation */
 
-    --popover: 0 0% 3.9%;
-    --popover-foreground: 0 0% 98%;
+    /* Component-specific - Dark mode */
+    --component-bg: 0 0% 12%;          /* Distinct from background */
+    --component-header: var(--surface-elevated);
+    --component-hover: var(--surface-higher);
 
-    --primary: 0 0% 98%;
-    --primary-foreground: 0 0% 9%;
+    /* Interactive states - Dark mode */
+    --state-hover: hsl(0 0% 16%);
+    --state-active: hsl(0 0% 18%);
+    --state-selected: hsl(0 0% 20%);
 
-    --secondary: 0 0% 14.9%;
-    --secondary-foreground: 0 0% 98%;
+    /* Keep existing dark mode overrides */
+    --card: var(--surface-base);
+    --card-foreground: var(--foreground);
 
-    --muted: 0 0% 14.9%;
+    --popover: var(--surface-base);
+    --popover-foreground: var(--foreground);
+
+    --secondary: var(--surface-elevated);
+    --secondary-foreground: var(--color-gray-50);
+
+    --muted: 0 0% 15%;
     --muted-foreground: 0 0% 63.9%;
 
-    --accent: 0 0% 14.9%;
-    --accent-foreground: 0 0% 98%;
-
+    --accent: 209 100% 16%;
+    --accent-foreground: 209 100% 98%;
+    
     --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
+    --destructive-foreground: var(--color-gray-50);
 
     --success: 142 76% 36%;
-    --success-foreground: 0 0% 98%;
+    --success-foreground: var(--color-gray-50);
 
     --warning: 36 100% 50%;
-    --warning-foreground: 0 0% 98%;
+    --warning-foreground: var(--color-gray-50);
 
-    --border: 0 0% 14.9%;
-    --input: 0 0% 14.9%;
-    --ring: 0 0% 83.1%;
+    --border: var(--border-dark);
+    --input: var(--color-gray-700);
+    --ring: var(--color-gray-100);
 
     --chart-1: 220 70% 50%;
     --chart-2: 160 60% 45%;
@@ -98,11 +174,34 @@
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-primary-foreground: var(--color-gray-50);
     --sidebar-accent: 240 3.7% 15.9%;
     --sidebar-accent-foreground: 240 4.8% 95.9%;
     --sidebar-border: 240 3.7% 15.9%;
     --sidebar-ring: 217.2 91.2% 59.8%;
+
+    --notion-blue: var(--color-primary-base);
+
+    --gradient-from: 190 76% 70%;
+    --gradient-via: 222 82% 72%;
+    --gradient-to: 251 86% 70%;
+    --gradient-border: 222 82% 72%;
+    --gradient-text: 222 82% 85%;
+
+    /* Component-specific backgrounds */
+    --component-background: var(--component-bg);
+    --header-background: var(--component-header);
+    --table-background: var(--component-bg);
+    --table-header: var(--component-header);
+    --table-row-hover: var(--component-hover);
+
+    /* Update border colors for dark mode */
+    --border: var(--border-dark);
+    --border-table: 0 0% 15%;
+
+    /* Focus ring color in dark mode */
+    --ring: var(--primary);
+    --ring-offset: 0 0% 10%;
   }
 }
 
@@ -126,5 +225,145 @@
   }
   body {
     @apply min-h-[100dvh];
+  }
+}
+
+@layer components {
+  .gradient-ocean {
+    background: linear-gradient(
+      90deg,
+      hsl(var(--gradient-from)),
+      hsl(var(--gradient-via)) 50%,
+      hsl(var(--gradient-to))  
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Left to right gradient */
+  .feature-title {
+    @apply text-4xl font-bold tracking-tight;
+    background: linear-gradient(
+      90deg,
+      hsl(var(--gradient-from)),
+      hsl(var(--gradient-via)) 50%,
+      hsl(var(--gradient-to))
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Right to left gradient */
+  .feature-title-reverse {
+    @apply text-4xl font-bold tracking-tight;
+    background: linear-gradient(
+      90deg,
+      hsl(var(--gradient-to)),
+      hsl(var(--gradient-via)) 50%,
+      hsl(var(--gradient-from))
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Diagonal variation */
+  .feature-title-diagonal {
+    @apply text-4xl font-bold tracking-tight;
+    background: linear-gradient(
+      135deg,
+      hsl(var(--gradient-from)),
+      hsl(var(--gradient-via)) 50%,
+      hsl(var(--gradient-to))
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Text styling components */
+  .feature-subtitle {
+    @apply text-xl font-medium text-foreground/90;
+  }
+
+  .feature-description {
+    @apply text-lg text-muted-foreground leading-relaxed whitespace-pre-wrap;
+  }
+
+  /* Animation for text elements */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .feature-card {
+    animation: fadeIn 0.3s ease-out forwards;
+  }
+
+  /* Common component patterns */
+  .card-base {
+    @apply surface-base rounded-xl border border-border/40 shadow-sm;
+  }
+
+  .header-base {
+    @apply surface-elevated px-4 py-3;
+  }
+
+  .table-row-base {
+    @apply interactive-hover border-b border-border/40 dark:border-[hsl(var(--border-table))];
+  }
+
+  /* Gradient hover effects */
+  .hover-gradient-bar {
+    @apply relative transition-all duration-200;
+    @apply hover:text-foreground;
+    @apply focus:outline-none focus:ring-2 focus:ring-primary/20 focus:ring-offset-2 dark:focus:ring-primary/40;
+  }
+
+  .hover-gradient-bar::after {
+    content: '';
+    @apply absolute inset-x-0 bottom-0 h-[2px];
+    @apply bg-gradient-to-r from-transparent via-[hsl(var(--primary))] to-transparent;
+    @apply opacity-0 transition-all duration-200;
+  }
+
+  .hover-gradient-bar:hover::after {
+    @apply opacity-40;
+  }
+
+  /* Variations */
+  .hover-gradient-bar-top::after {
+    @apply bottom-auto top-0;
+  }
+
+  .hover-gradient-bar-full {
+    @apply hover:bg-gradient-to-r hover:from-transparent hover:via-[hsl(var(--primary))/5] hover:to-transparent;
+  }
+}
+
+/* Utility classes for common patterns */
+@layer utilities {
+  .surface-base {
+    @apply bg-[hsl(var(--surface-base))];
+  }
+  
+  .surface-elevated {
+    @apply bg-[hsl(var(--surface-elevated))];
+  }
+
+  .surface-higher {
+    @apply bg-[hsl(var(--surface-higher))];
+  }
+
+  .interactive-hover {
+    @apply hover:bg-[hsl(var(--state-hover))] transition-colors duration-200;
   }
 }

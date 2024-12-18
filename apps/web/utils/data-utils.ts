@@ -38,3 +38,4 @@ export function filterCasesByStage(stage: Case['stage']): Case[] {
 export function filterCasesByLawBranch(lawBranch: Case['lawBranch']): Case[] {
   return cases.filter(caseData => caseData.lawBranch === lawBranch);
 }
+
