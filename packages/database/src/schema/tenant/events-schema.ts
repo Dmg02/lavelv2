@@ -1,7 +1,7 @@
 import { pgSchema, pgTable, timestamp, uuid, foreignKey, index, jsonb, varchar, text, boolean, pgEnum } from "drizzle-orm/pg-core";
 import { relations } from "drizzle-orm";
 import { sql } from "drizzle-orm";
-import { attendees } from "./attendees-schema";
+// import { attendees } from "./attendees-schema";
 import { cases } from "./case-schema";
 import { profiles } from "./profiles-schema";
 import { authUsers } from "./auth-schema";
@@ -56,7 +56,7 @@ export const events = tenantSchema.table("events", {
 });
 
 export const eventsRelations = relations(events, ({ one, many }) => ({
-  attendees: many(attendees),
+  // attendees: many(attendees),
   createdBy: one(profiles, {
     fields: [events.createdBy],
     references: [profiles.id]

@@ -10,7 +10,7 @@ import { teamMembers } from "./team-members-schema";
 
 export const tenantSchema = pgSchema("tenant");
 
-export const teams = pgTable("teams", {
+export const teams = tenantSchema.table("teams", {
     id: uuid("id").defaultRandom().primaryKey().notNull(),
     name: varchar("name", { length: 255 }).notNull(),
     description: text("description"),

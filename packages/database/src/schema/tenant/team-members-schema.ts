@@ -9,7 +9,7 @@ import { authUsers } from "./auth-schema";
 export const tenantSchema = pgSchema("tenant");
 
 // Junction table for the many-to-many relationship between teams and profiles
-export const teamMembers = pgTable("team_members", {
+export const teamMembers = tenantSchema.table("team_members", {
     
     // Identifiers
     id: uuid("id").defaultRandom().primaryKey().notNull(),

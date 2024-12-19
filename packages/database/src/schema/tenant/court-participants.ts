@@ -6,7 +6,7 @@ import { relations } from "drizzle-orm/relations";
 
 export const tenantSchema = pgSchema("tenant");
 
-export const courtParticipations = pgTable('court_participations', {
+export const courtParticipations = tenantSchema.table('court_participations', {
     id: uuid('id').defaultRandom().primaryKey(),
     
     // Links to the case participation
