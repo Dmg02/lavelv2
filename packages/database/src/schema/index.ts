@@ -1,5 +1,5 @@
-import * as lawSchema from './law';
+import * as publicSchema from './public';
 import * as tenantSchema from './tenant';
 import * as traceSchema from './trace';
 
-export { lawSchema, tenantSchema, traceSchema };
+export { publicSchema, tenantSchema, traceSchema };

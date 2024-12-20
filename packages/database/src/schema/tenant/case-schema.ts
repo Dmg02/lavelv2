@@ -8,17 +8,16 @@ export const tenantSchema = pgSchema("tenant");
 
 // Define the cases table with all its fields and relationships
 export const cases = tenantSchema.table("cases", {
+   
     // Core Identification
-    // These fields uniquely identify and describe each case
     id: uuid('id').defaultRandom().primaryKey(),
     title: text('title').notNull(),
     description: text('description'),
     
     // Case Type and Status
-    // Using TypeScript literal types for better type safety
     type: text('type').notNull().$type<'advisory' | 'litigation'>(),
     isActive: boolean('is_active').notNull().default(true),
-    status: text('status').notNull().$type<'pending' | 'active' | 'closed' | 'archived'>(),
+    status: text('status').notNull().$type<'pending' | 'active' | 'closed' | 'archived' | 'other'>(),
     
     // Self-referential relationship with explicit AnyPgColumn type
     originalCaseId: uuid('original_case_id')
@@ -76,10 +75,7 @@ export const cases = tenantSchema.table("cases", {
     totalNonBillableHours: numeric('total_non_billable_hours', { precision: 10, scale: 2 }).default('0'),
     totalHours: numeric('total_hours', { precision: 10, scale: 2 }).default('0'),
     totalTaskHours: numeric('total_task_hours', { precision: 10, scale: 2 }).default('0'),
-    totalMeetingHours: numeric('total_meeting_hours', { precision: 10, scale: 2 }).default('0'),
-    totalEmailHours: numeric('total_email_hours', { precision: 10, scale: 2 }).default('0'),
-    totalPhoneHours: numeric('total_phone_hours', { precision: 10, scale: 2 }).default('0'),
-    totalTravelHours: numeric('total_travel_hours', { precision: 10, scale: 2 }).default('0'),
+
     totalOtherHours: numeric('total_other_hours', { precision: 10, scale: 2 }).default('0'),
 
     // Media and Storage
