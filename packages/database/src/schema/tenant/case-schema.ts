@@ -2,6 +2,10 @@ import { pgTable, uuid, text, timestamp, integer, numeric, pgSchema, boolean, An
 import { profiles } from "./profiles-schema";
 import { teams } from "./teams-schema";
 import { relations } from "drizzle-orm";
+import { states } from "../public/states-schema";
+import { cities } from "../public/cities-schema";
+import { lawBranches } from "../public/law-branches-schema";
+import { caseParties } from "./case-parties";
 
 // Create a dedicated schema namespace for tenant-specific tables
 export const tenantSchema = pgSchema("tenant");
@@ -13,12 +17,21 @@ export const cases = tenantSchema.table("cases", {
     id: uuid('id').defaultRandom().primaryKey(),
     title: text('title').notNull(),
     description: text('description'),
-    
+
+    // Case location
+    stateId: integer('state_id')
+        .references(() => states.id),
+    cityId: integer('city_id')
+        .references(() => cities.id),
+
     // Case Type and Status
     type: text('type').notNull().$type<'advisory' | 'litigation'>(),
+    caseLawBranchId: integer('case_law_branch_id')
+        .references(() => lawBranches.id),
     isActive: boolean('is_active').notNull().default(true),
     status: text('status').notNull().$type<'pending' | 'active' | 'closed' | 'archived' | 'other'>(),
-    
+    riskLevel: text('risk_level').notNull().$type<'low' | 'medium' | 'high'>(),
+
     // Self-referential relationship with explicit AnyPgColumn type
     originalCaseId: uuid('original_case_id')
         .references((): AnyPgColumn => cases.id, { onDelete: 'set null', onUpdate: 'set null' }),    
@@ -130,5 +143,6 @@ export const casesRelations = relations(cases, ({ one, many }) => ({
     updatedByUser: one(profiles, {
         fields: [cases.updatedBy],
         references: [profiles.id],
-    })
+    }),
+    parties: many(caseParties)
 }));
